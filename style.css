@@ -1,0 +1,308 @@
+:root {
+    --primary-text-color:#fff;
+    --primary-element-margin:2rem;
+    --primary-element-padding:1rem;
+    --primary-main-heading-font-size:5rem;
+    --primary-paragraph-font-size:1rem;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+    list-style: none;
+    /* outline:solid 2px limegreen; */
+}
+
+body {
+    background:linear-gradient(to bottom, #000, #323232);
+
+    /* overflow-x: hidden; */
+}
+
+/* Header Related Stuff */
+.header-container{
+    width: 100%;
+}
+
+.nav-container{
+    position: relative; /* VERY IMPORTANT */
+    margin: 0 auto;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 3em;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+
+    color: #fff;
+
+    text-shadow: #5f5f5f 2px 0 10px;
+    padding:0.2em;
+}
+
+.nav-container ul{
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    width: max-content; /* prevents forced width */
+    min-width: 160px;
+
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+
+    background: #111;
+    padding: var(--primary-element-padding);
+    border-radius: 8px;
+}
+
+.nav-container ul.active {
+    display: flex;
+}
+
+.nav-items{
+    font-size: 1.6em;
+    padding: 1rem;
+      font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    color: #c0c0c0;
+    /* fix karo */
+    transition: color 200ms;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-items:hover {
+    color:#fff;
+    text-shadow: #5f5f5f 2px 0 10px;
+}
+
+.header-container hr {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* Main Container related designing */
+.main-container {
+    padding: var(--primary-element-padding);
+    margin-top: var(--primary-element-margin);
+    width: 100%;
+}
+
+.hero-section {
+    padding: var(--primary-element-padding);
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.hero-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Syne Mono", monospace;
+    font-weight: 800;
+    font-style: normal;
+    padding:0.2em;
+
+    color: #ffffff;
+    text-shadow: #5f5f5f 2px 0 10px;
+}
+
+.about-myself-container {
+    padding: var(--primary-element-padding);
+}
+
+.hero-image{
+    display:none;
+}
+
+.hero-section p {
+    margin-top: var(--primary-element-margin);
+    padding: var(--primary-element-padding);
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+    font-size:1.2rem;
+
+    text-align: left;
+    text-shadow: #343434 2px  0 3px;
+    transition: color, transform 200ms;
+    border-radius: 1rem;
+    border: 2px solid white;
+    box-shadow: rgba(235, 235, 235, 0.25) 0px 14px 28px, rgba(25, 25, 25, 0.22) 0px 10px 10px;
+
+    color:#929292;
+}
+
+
+.tech-stack-container{
+    margin-top: var(--primary-element-margin);
+    padding: var(--primary-element-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-stack-container h2 {
+    font-family: "Funnel Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.9rem;
+    text-shadow: #696969 2px 0 10px;
+    color: #fff;
+}
+
+.tech-stack-grid {
+    width:80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+
+    gap:2rem;
+    padding: var(--primary-element-padding);
+    margin: var(--primary-element-margin);
+}
+
+.tech-grid-items{
+    border-radius: 0.8em;
+    transition: transform 200ms;
+}
+
+.my-education-section {
+    padding: var(--primary-element-padding);
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.my-education-section h2{
+    padding: var(--primary-element-padding);
+    font-size:2rem;
+    font-family: "Funnel Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+
+    color: #fff;
+    text-shadow: #696969 2px 0 10px;
+}
+
+
+
+/* Media Query for header and nav container */
+@media screen and (min-width:768px) {
+    .nav-container ul{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    /* Media query for hamburger menu */
+    .hamburger {
+        display: none;
+    }
+
+    .nav-container ul {
+        position: static;
+        flex-direction: row;
+        background: none;
+        padding: 0;
+        display: flex;
+    }
+    
+    .about-myself-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about-myself-container p{
+        margin-left: 1rem;
+        width: 40%;
+    }
+
+    .hero-section p:hover {
+        font-weight: 800;
+        color:#dbdbdb;
+        transform: scale(1.04);
+    }
+
+
+
+    .hero-image{
+        display: block;
+        height: 260px;
+        width: 30%;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        border:none;
+        border-radius: 1rem;
+        transition: transform 200ms;
+        box-shadow: rgba(235, 235, 235, 0.25) 0px 14px 28px, rgba(25, 25, 25, 0.22) 0px 10px 10px;
+        object-fit: cover;
+
+    }
+
+    .hero-image:hover{
+        transform: scale(1.04);
+    }
+
+    .tech-stack-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .tech-grid-items:hover {
+        transform: scale(1.2);
+        box-shadow: rgba(235, 235, 235, 0.25) 0px 14px 28px, rgba(25, 25, 25, 0.22) 0px 10px 10px;
+        
+    }
+} 
+
+
+/* Add animations for grid, aboutmyself, headings img */
+
+/* For grid about my tech stack use the animation that deep used (figure out somehow)  */
